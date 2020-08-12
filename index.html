@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- <link rel="stylesheet" href="assets/demo.css"> -->
+<!-- <script src="https://kit.fontawesome.com/51ccae8c09.js"></script> -->
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+<script src="build/tracking.js"></script>
+<!-- <script src="template.js"></script> -->
+
+<head>
+
+  <style>
+  #container {
+    margin: 0px auto;
+    width: 411px;
+    height: 500px;
+    border: 10px #333 solid;
+  }
+  #myVideo {
+    width: 411px;
+    height: 500px;
+    background-color: #666;
+  }
+
+  .title{
+    font-size:26px;
+    font-family: 'Staatliches', cursive;
+    color: #EB6800;
+
+  }
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div id="devices"></div>
+
+  <div class="w3-bar w3-white"  display= "inline-block">
+    <!-- <a href="#" class="w3-bar-item w3-button w3-xlarge w3-text-orange" style="width:56px"><i class="fas fa-list"></i></a> -->
+    <div class="title w3-bar-item" align="center" style="width:360px" display= "inline-block">Meal Scout</div>
+    <!-- <a href="#" class="w3-bar-item w3-button" ><i class="fas fa-list"></i></a> -->
+  </div>
+
+
+  <!-- //feature detection -->
+
+  <img src="homescreen/scan-item.jpg" style="width:100%">
+
+  <div class="container">
+    <video id="myVideo" width="360" height="500" preload autoplay loop muted></video>
+    <!-- <h1>Template Matching ...using features </h1><br> -->
+    <div class="row">
+      <div class="col-md-4">
+        <canvas id="big_canvas1"></canvas>
+        <canvas id="big_canvas2"></canvas>
+        <canvas id="big_canvas3"></canvas>
+
+      </div>
+
+      <script>
+      // function getDevices() {
+  // AFAICT in Safari this only gets default devices until gUM is called :/
+// console.log(navigator.mediaDevices.enumerateDevices());
+
+// document.getElementById("devices").innerHTML =
+
+var backCameraId = "";
+navigator.mediaDevices.enumerateDevices()
+.then(function(devices) {
+  devices.forEach(function(device) {
+    //facing back
+    // if(device.kind == 'videoinput' && device.label == 'facing back') {
+    //   backCameraId = device.deviceId;
+    //   document.getElementById("devices").innerHTML += "<p><b>" + device.label + " " + device.deviceId + "</b></p>";
+    // } else {
+      // document.getElementById("devices").innerHTML += 'update3';
+      //"<p>" + device.kind + "" + device.label + " " + device.deviceId + "</p>";
+    // }
+  })
+});
+
+// const constraints = {
+//   video: true,
+//   facingMode: {exact: "environment"}
+//  };
+//  navigator.mediaDevices.getUserMedia(constraints);
+
+
+// }
+
+
+
+      tracking.ColorTracker.registerColor('spam_blue', function(r,g,b) {
+
+        // console.log(g);
+        // console.log(b);
+
+        if(35-10 <= r && r <= 35+10 && 41-10 <= g && g <= 41+10 && 103-10 <=b && b <= 103+10) {
+          console.log("found spam blue!");
+          window.location.href = 'detail2.html';
+
+            return true;
+        }
+        });
+
+        // tracking.ColorTracker.registerColor('spam_yellow', function(r,g,b) {
+        //
+        //   // console.log(g);
+        //   // console.log(b);
+        //
+        //   if(r == 249 && g == 236 && b == 34) {
+        //     console.log("found spam yellow!");
+        //     window.location.href = 'skewer.html';
+        //
+        //       return true;
+        //   }
+        //   });
+      var colors = new tracking.ColorTracker(['spam_blue']);
+
+
+      colors.on('track', function(event) {
+        if (event.data.length === 0) {
+          console.log("No colors were detected in this frame.");
+        } else {
+          event.data.forEach(function(rect) {
+
+            console.log("Found SPAM LOGO!");
+            // console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+           // document.getElementById("content").innerHTML='<object type="text/html" data="skewer.html" ></object>';
+
+          });
+        }
+      });
+      tracking.track('#myVideo', colors, {camera: true });
+
+
+
+      tracking.ColorTracker.registerColor('Delmonte_red', function(r,g,b) {
+
+        // console.log(g);
+        // console.log(b);
+
+        if(r == 223) {//&& g == 34 && b == 63
+             return true;
+        }
+        });
+
+
+      var delColors1 = new tracking.ColorTracker(['Delmonte_red']);
+      delColors1.on('track', function(event) {
+        if (event.data.length === 0) {
+          // console.log("No colors were detected in this frame.");
+        } else {
+          event.data.forEach(function(rect) {
+            // console.log("found Delmonte Red!");
+            console.log("Found Delmonte LOGO!");
+            // console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+           // document.getElementById("content").innerHTML='<object type="text/html" data="detail.html" ></object>';
+
+          });
+        }
+      });
+      //tracking.track('#myVideo', delColors1, {camera: true });
+
+
+
+
+      //
+      // tracking.track('#myVideo', colors, { camera: true });
+      blurRadius = 3;
+      canvas_big1 = document.getElementById("big_canvas1");
+      imcanvas_big1 = canvas_big1.getContext("2d");
+      imbig1 = new Image();
+      imbig1.crossOrigin = "Anonymous";
+      imbig1.src = "images/temA1.jpg"
+      imbig1.width = 275;
+      imbig1.height = 183;
+      canvas_big1.width = imbig1.width;
+      canvas_big1.height = imbig1.height;
+      imbig1.onload = function(){
+        imcanvas_big1.drawImage(imbig1, 0, 0);
+        var imageData1 = imcanvas_big1.getImageData(0, 0, canvas_big1.width, canvas_big1.height);
+        // var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
+        //tracking.Fast.THRESHOLD = 20;
+        corners1 = tracking.Fast.findCorners(imageData1.data, canvas_big1.width, canvas_big1.height);
+        descriptors1 = tracking.Brief.getDescriptors(imageData1.data, canvas_big1.width, corners1);
+      }
+
+        canvas_big2 = document.getElementById("big_canvas2");
+        imcanvas_big2 = canvas_big2.getContext("2d");
+        imbig2 = new Image();
+        imbig2.crossOrigin = "Anonymous";
+        imbig2.src = "images/Spam-logo.jpg"
+        imbig2.width = 275;
+        imbig2.height = 183;
+        canvas_big2.width = imbig2.width;
+        canvas_big2.height = imbig2.height;
+        imbig2.onload = function(){
+          imcanvas_big2.drawImage(imbig2, 0, 0);
+           imageData2 = imcanvas_big2.getImageData(0, 0, canvas_big2.width, canvas_big2.height);
+          // var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
+          //tracking.Fast.THRESHOLD = 20;
+          corners2 = tracking.Fast.findCorners(imageData2.data, canvas_big2.width, canvas_big2.height);
+          descriptors2 = tracking.Brief.getDescriptors(imageData2.data, canvas_big2.width, corners2);
+          // width = 275;
+          // height = 183;
+          // var scannedCorners = tracking.Fast.findCorners(imageData2.data, width, height);
+          // var scannedDescriptors = tracking.Brief.getDescriptors(imageData2.data, width, scannedCorners);
+          // //var matches1 = tracking.Brief.reciprocalMatch(corners1, descriptors1, scannedCorners, scannedDescriptors);
+          // var matches2 = tracking.Brief.reciprocalMatch(corners2, descriptors2, scannedCorners, scannedDescriptors);
+          // //var matches3 = tracking.Brief.reciprocalMatch(corners3, descriptors3, scannedCorners, scannedDescriptors);
+          // matches2.sort(function(a, b) {
+          //   return b.confidence - a.confidence;
+          // });
+        };
+
+          // canvas_big3 = document.getElementById("big_canvas3");
+          // imcanvas_big3 = canvas_big3.getContext("2d");
+          // imbig3 = new Image();
+          // imbig3.crossOrigin = "Anonymous";
+          // imbig3.src = "images/kings_hawaiian_logo.png"
+          // imbig3.width = 275;
+          // imbig3.height = 183;
+          // canvas_big3.width = imbig3.width;
+          // canvas_big3.height = imbig3.height;
+          // imbig3.onload = function(){
+          //   imcanvas_big3.drawImage(imbig3, 0, 0);
+          //   var imageData3 = imcanvas_big3.getImageData(0, 0, canvas_big3.width, canvas_big3.height);
+          //   // var gray1 = tracking.Image.grayscale(tracking.Image.blur(imageData1.data, canvas_big.width, canvas_big.height, blurRadius), canvas_big.width, canvas_big.height);
+          //   //tracking.Fast.THRESHOLD = 20;
+          //
+          //   corners3 = tracking.Fast.findCorners(imageData3.data, canvas_big3.width, canvas_big3.height);
+          //   descriptors3 = tracking.Brief.getDescriptors(imageData3.data, canvas_big3.width, corners3);
+          // };
+
+
+          var MyTracker = function() {
+            MyTracker(this, 'constructor');
+          }
+
+
+          var count = 0;
+          var MyTracker = function() {
+            var result = false;
+            MyTracker.prototype.track = function(pixels, width, height) {
+              // console.log(pixels);
+              //tracking.Fast.THRESHOLD = 20;
+
+              // width = canvas_big.width;
+              // height = canvas_big.height;
+              var scannedCorners = tracking.Fast.findCorners(pixels, width, height);
+              var scannedDescriptors = tracking.Brief.getDescriptors(pixels, width, scannedCorners);
+              var matches1 = tracking.Brief.reciprocalMatch(corners1, descriptors1, scannedCorners, scannedDescriptors);
+              //var matches2 = tracking.Brief.reciprocalMatch(corners2, descriptors2, scannedCorners, scannedDescriptors);
+              //var matches3 = tracking.Brief.reciprocalMatch(corners3, descriptors3, scannedCorners, scannedDescriptors);
+
+              // matches2.sort(function(a, b) {
+              //   return b.confidence - a.confidence;
+              // });
+
+              console.log("delmonte");
+              console.log(matches1);
+              // console.log("spam");
+              // console.log(matches2);
+              // console.log("hawaiian");
+              // console.log(matches3);
+
+
+              if(matches1.length > 60) {
+                count++;
+                console.log(matches1);
+                console.log("matched: " + count + " times");
+                trackingTask.stop();
+                window.location.href = 'detail.html';
+              }
+
+              if(count > 1) {
+                result = true;
+              }
+
+              this.emit('track', {
+                data : result
+              });
+            };
+          }
+          tracking.inherits(MyTracker, tracking.Tracker);
+          tracking.MyTracker = MyTracker;
+
+          var myTracker = new tracking.MyTracker();
+          var trackingTask = tracking.track('#myVideo', myTracker, {camera: true });
+
+          myTracker.on('track', function(event) {
+            // Results are inside the event
+            if(event.data == true) {
+              console.log(event.data);
+              console.log(trackingTask);
+              trackingTask.stop();
+              trackingTask = null;
+              window.location.href = 'detail.html';
+            }
+          });
+
+
+          </script>
+
+          <!-- <div id="container">
+          <video autoplay="true" id="videoElement">
+
+          </video>
+          </div>
+
+          <div class="w3-display-container w3-center w3-padding-16">
+          Scan an item to search your meal
+          </div> -->
+          <!-- <video id="preview"></video> -->
+          <div class="w3-display-container w3-display-middle w3-margin-top" style="padding-top: 600px;">
+          <a href="detail.html"><input type="button" class="w3-button w3-black" value="Manually Scanned"></a>
+          </div>
+          <!-- <script src="screen.js" type="text/javascript"></script> -->
+
+
+          </body>
+
+          </html>

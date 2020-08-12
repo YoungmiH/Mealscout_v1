@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="assets/demo.css">
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+
+<script src="../build/tracking-min.js"></script>
+
+<head>
+</head>
+
+  <body>
+
+<!-- Top Navigation -->
+  <!-- <div class="w3-bar w3-gray w3-xlarge">
+    <div><a href="#" class="w3-bar-item w3-button w3-col"><i class="fas fa-list"></i></a></div>
+    <div>Meal Scout</div>
+  </div> -->
+
+  <video id="myVideo" width="400" height="300" preload autoplay loop muted></video>
+   <script>
+   var colors = new tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+
+   colors.on('track', function(event) {
+     if (event.data.length === 0) {
+       // No colors were detected in this frame.
+     } else {
+       event.data.forEach(function(rect) {
+         console.log(rect.x, rect.y, rect.height, rect.width, rect.color);
+       });
+     }
+   });
+
+   tracking.track('#myVideo', colors);
+   </script>
+
+  <!-- <div id="container">
+  	<video autoplay="true" id="videoElement">
+
+  	</video>
+  </div>
+
+  <div class="w3-display-container w3-center w3-padding-16">
+    Scan an item to search your meal
+  </div> -->
+  <!-- <video id="preview"></video> -->
+  <!-- <div class="w3-display-container w3-display-middle w3-margin-top">
+    <a href="detail.html"><input type="button" class="w3-button w3-black" value="Scanned"></a>
+  </div> -->
+  <!-- <script src="screen.js" type="text/javascript"></script> -->
+
+
+  </body>
+
+</html>

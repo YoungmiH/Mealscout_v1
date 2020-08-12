@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+
+
+<head>
+  <style>
+.header{
+  background-color:#EB6800;
+
+}
+
+.title{
+  font-size:21px;
+  font-family: 'Slabo 27px', serif;
+  text-align: center;
+}
+
+.item-name{
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight:bold;
+  color: #616161;
+}
+
+.item-name-dollar{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+}
+
+.receipt-list-title{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+  font-weight:bold;
+}
+
+.list-title{
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #616161;
+  text-decoration: none;
+}
+
+.list-description{
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #616161;
+  text-decoration: none;
+}
+
+.list-style{
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+}
+
+div.sticky-header{
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+.board{
+  z-index: 2;
+}
+
+.content{
+
+  z-index: 1;
+}
+  </style>
+</head>
+
+
+<body>
+
+<!-- Top Navigation -->
+
+<div class="sticky-header">
+
+  <div class="header w3-bar" display= "inline-block">
+      <a href="index.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+      <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:304px;padding:13px 0;padding-right:50px;" display= "inline-block">Select recipe</div>
+    </div>
+
+
+<div class="content">
+
+  <div class="w3-card w3-center w3-padding-large w3-text-dark-gray" style="background-color:white" >
+    <div class="w3-container w3-cell" style="height:100px">
+     <img src="shopping-cart/banana.jpg" style="height:100%">
+    </div>
+
+    <div class="w3-container w3-cell w3-left-align w3-cell-middle" >
+      <p class="item-name" style="height:100%">Del Monte Banana(2 lbs.)</p>
+      <p class="item-name-dollar" style="height:100%">$2.50</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="board">
+
+  <div class="w3-left w3-padding-large w3-left-align">
+    <p class="receipt-list-title">RECEIPT LIST</p>
+  </div>
+
+  <a href="ingredient.html">
+    <li class="list-style w3-bar w3-border-top w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="recipe-img/the-best-banana-cake-3.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
+
+        <div class="list w3-cell w3-cell-middle w3-left-align" >
+          <span class="list-title w3-large">Banana Cake</span><br>
+          <span class="list-description"><i class="far fa-clock"></i> Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
+
+  <a href="ingredient.html">
+    <li class="list-style w3-bar w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="recipe-img/Banana-Breakfast-Bars-2-of-5w.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
+
+        <div class="w3-cell w3-cell-middle w3-left-align" >
+        <span class="list-title w3-large">Banana Breakfast Bars</span><br>
+        <span class="list-description"><i class="far fa-clock"></i> Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
+
+  <a href="ingredient.html">
+    <li class="list-style w3-bar w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="recipe-img/banana-bars.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
+
+        <div class="w3-cell w3-cell-middle w3-left-align" >
+        <span class="list-title w3-large">Banana Bars</span><br>
+        <span class="list-description"><i class="far fa-clock"></i> Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
+
+  <a href="ingredient.html">
+    <li class="list-style w3-bar w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="recipe-img/bananabread.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
+
+        <div class="w3-cell w3-cell-middle w3-left-align" >
+        <span class="list-title w3-large">Banana Bread</span><br>
+        <span class="list-description"><i class="far fa-clock"></i> Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
+
+  <a href="ingredient.html">
+    <li class="list-style w3-bar w3-border-bottom w3-button">
+          <div class="w3-container w3-cell" style="height:100px;width:150px">
+          <img src="recipe-img/bananacookies.png" style="height:100%;width:100%" class="w3-bar-item w3-circle">
+          </div>
+
+        <div class="w3-cell w3-cell-middle w3-left-align" >
+        <span class="list-title w3-large">Banana Cookies</span><br>
+        <span class="list-description"><i class="far fa-clock"></i> Prep time: 20m</span>
+        </div>
+    </li>
+  </a>
+</div>
+
+
+</body>
+
+
+</html>

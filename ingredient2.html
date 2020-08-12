@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<head>
+  <style>
+  .header{
+    background-color:#EB6800;
+  }
+
+  .title{
+    font-size:21px;
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+  }
+
+  .item-name{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight:bold;
+    color: #616161;
+    height:100%
+
+  }
+
+  .item-name-dollar{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #616161;
+  }
+
+  .instructions-text{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #616161;
+  }
+
+  .city{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+  .tab-direction{
+    height:60px;
+    width:170px;
+    padding-top:60px;
+    text-align: center;
+    color: #616161;
+  }
+
+  .tab-ingredients{
+    height:60px;
+    width:170px;
+    padding-top:60px;
+    text-align:center;
+    color: #616161;
+  }
+
+  .w3-padding {
+    padding: 16px 16px!important;
+  }
+
+  .tab-button {
+    padding: 0.01em 3px;
+    background-color: #FFFFFF;
+  }
+
+  div.done-button {
+    font-family: 'Nunito', sans-serif;
+    background-color:#EB6800;
+    font-size: 22px;
+    /* height: 30px; */
+    /* font-weight:bold; */
+    color: #FFFFFF;
+    position: sticky;
+    bottom: 0;
+    text-decoration: none;
+    /* width:411px; */
+  }
+
+  .board{
+    z-index: 1;
+  }
+
+  .content{
+    padding-top:10px;
+    padding-bottom:20px;
+
+    z-index: 2;
+  }
+
+  div.sticky-header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+  .ingredients{
+    padding-top:0px;
+  }
+
+  .recipe-card{
+    background-color:#FFFFFF;
+    border-bottom: 1px solid #D0D0D0;
+  }
+
+  .ingredient-row{
+    float: left;
+    width: 33%;
+    height: 160px;
+    border: 1px solid #FFFFFF;
+    padding-top: 15px;
+  }
+
+  p.ingredient-name{
+    padding-top: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    color: #616161;
+    text-align: center;
+    width: 110px;
+  }
+
+  .item-padding{
+    padding-left: 20px;
+  }
+
+  .item-img-eggs{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/eggs.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-eggs.checked{
+    background-image: url("item-icon/eggs-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+
+  .item-img-carrot{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/carrot.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-carrot.checked{
+    background-image: url("item-icon/carrot-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-rice{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/rice.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-rice.checked{
+    background-image: url("item-icon/rice-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-spam{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/spam.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-spam.checked{
+    background-image: url("item-icon/spam-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-corn{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/corn.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-corn.checked{
+    background-image: url("item-icon/corn-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+
+
+
+  .item-img-pea{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/pea.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-pea.checked{
+    background-image: url("item-icon/pea-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-onions{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/onions.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-onions.checked{
+    background-image: url("item-icon/onions-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+
+  .item-img-fishsauce{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/fishsauce.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-fishsauce.checked{
+    background-image: url("item-icon/fishsauce-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-sesame-oil{
+    box-shadow: 0px 2px 4px #ccc;
+    border-radius:130px;
+    background-image: url("item-icon/sesame-oil.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  .item-img-sesame-oil.checked{
+    background-image: url("item-icon/sesame-oil-checked.png");
+    width:80px;
+    height:80px;
+    background-repeat:no-repeat;
+  }
+
+  div.sticky-header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- Top Navigation -->
+
+  <!-- <div class="board"> -->
+  <div class="sticky-header">
+
+    <div class="header w3-bar" display= "inline-block">
+      <a href="detail2.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+      <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:304px;padding:13px 0;padding-right:50px;" display= "inline-block">Recipe details</div>
+    </div>
+
+
+    <div class="recipe-card w3-card w3-center w3-padding-large w3-text-dark-gray" >
+      <div class="w3-container w3-cell" style="height:100px">
+        <img src="recipe-img/friedrice.png" style="height:100%;border-radius:100px;">
+      </div>
+
+      <div class="w3-container w3-cell w3-left-align w3-cell-middle" style="padding-top: 10px;">
+        <p class="item-name">Spam Fried Rice</p>
+        <p class="item-name-dollar"style="height:100%"><i class="far fa-clock"></i>   Prep time: 20m</p>
+      </div>
+    </div>
+
+
+
+    <div class="tab-button w3-container">
+      <div class="w3-bar">
+        <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+          <div class="tab-ingredients w3-cell tablink w3-bottombar w3-padding">Ingredients</div></a>
+          <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+            <div class="tab-direction w3-cell tablink w3-bottombar w3-padding">Instructions</div></a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content">
+        <div id="London" class="ingredients w3-container city w3-display-container city">
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-spam"></div></div>
+            </a>
+            <p class='ingredient-name'>6 ounces Spam, diced</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-eggs"></div></div>
+            </a>
+            <p class='ingredient-name'>2 large eggs</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-carrot"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 cup frozen diced carrots</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-rice"></div></div>
+            </a>
+            <p class='ingredient-name'>3 cups cooked rice</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-corn"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 cup frozen corn</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-pea"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 cup frozen peas</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-onions"></div></div>
+            </a>
+            <p class='ingredient-name'>2 green onions, sliced</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-fishsauce"></div></div>
+            </a>
+            <p class='ingredient-name'>1/2 tablespoon fish sauce</p>
+          </div>
+
+          <div class="ingredient-row">
+            <a href="#">
+              <div class="item-padding"><div class="item-img-sesame-oil"></div></div>
+            </a>
+            <p class='ingredient-name'>1/4 teaspoon sesame oil</p>
+          </div>
+
+        </div>
+
+        <div id="Paris" class="w3-container city" style="display:none">
+          <p class="instructions-text">1. Preheat the oven to 350°F (177°C) and grease a 9×13 inch pan. </p>
+          <p class="instructions-text">2. Make the cake: Mash the bananas. I usually just use my mixer for this! Set mashed bananas aside.</p>
+          <p class="instructions-text">3. Whisk the flour, baking powder, baking soda, cinnamon, and salt together. Set aside.</p>
+          <p class="instructions-text">4. Using a handheld or stand mixer fitted with a paddle attachment, beat the butter on high speed until smooth and creamy – about 1 minute. Add both sugars and beat on high speed for 2 minutes until creamed together. Scrape down the sides and up the bottom of the bowl with a rubber spatula as needed. Add the eggs and the vanilla. Beat on medium-high speed until combined, then beat in the mashed bananas. Scrape down the sides and up the bottom of the bowl as needed. With the mixer on low speed, add the dry ingredients in three additions alternating with the buttermilk and mixing each addition just until incorporated. Do not overmix. The batter will be slightly thick and a few lumps is OK.</p>
+          <p class="instructions-text">5. Spread batter into the prepared pan. Bake for 45-50 minutes. Baking times vary, so keep an eye on yours. The cake is done when a toothpick inserted in the center comes out clean. If you find the top of the cake is browning too quickly in the oven, loosely cover it with aluminum foil.</p>
+          <p class="instructions-text">6. Remove the cake from the oven and set on a wire rack. Allow to cool completely. After about 45 minutes, I usually place it in the refrigerator to speed things up.</p>
+          <p class="instructions-text">7. Make the frosting: In a large bowl using a handheld or stand mixer fitted with a paddle or whisk attachment, beat the cream cheese and butter together on high speed until smooth and creamy. Add 3 cups confectioners’ sugar, vanilla, and salt. Beat on low speed for 30 seconds, then switch to high speed and beat for 2 minutes. If you want the frosting a little thicker, add the extra 1/4 cup of confectioners sugar (I add it). Spread the frosting on the cooled cake. Refrigerate for 30 minutes before serving. This helps sets the frosting and makes cutting easier.</p>
+          <p class="instructions-text">8. Cover leftover cake tightly and store in the refrigerator for 5 days.</p>
+
+          </div>
+
+        </div>
+
+        <a href="shoppinglist2.html">
+          <div class="done-button w3-button w3-block">Go to Shopping List</div>
+        </a>
+
+        <!-- </div> -->
+
+
+
+        <script>
+        function openCity(evt, cityName) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("city");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+
+
+          tablinks = document.getElementsByClassName("tablink");
+          document.getElementById(cityName).style.textDecoration = "none";
+
+          for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace("w3-border-orange");
+
+          }
+          document.getElementById(cityName).style.display = "block";
+
+          evt.currentTarget.firstElementChild.className += " w3-border-orange";
+        }
+
+//mouse click
+        $(".item-img-spam").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-eggs").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-carrot").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-rice").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-corn").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-pea").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-onions").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-fishsauce").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+        $(".item-img-sesame-oil").click(function(){
+          $(this).toggleClass("checked");
+        })
+
+
+        </script>
+
+
+
+
+      </body>
+
+
+      </html>
