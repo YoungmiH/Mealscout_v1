@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://kit.fontawesome.com/51ccae8c09.js"></script>
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<head>
+  <style>
+  .header{
+    background-color:#EB6800;
+
+  }
+
+  .title{
+    font-size:21px;
+    font-family: 'Slabo 27px', serif;
+    text-align: center;
+  }
+
+  .item-container{
+    text-decoration: none;
+    padding-top:16px;
+    height: 110px;
+    border-bottom: 1px solid #D0D0D0;
+    padding-left:10px;
+  }
+
+  .item-content{
+    /* padding-left:110px; */
+    display: inline-block;
+    width: 160px;
+
+  }
+
+  .item-header{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight:bold;
+    color: #616161;
+    height:100%
+  }
+
+  .item-price{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight:bold;
+    color: #616161;
+    height:100%
+  }
+
+  .item-location{
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight:bold;
+    color: #616161;
+    height:100%;
+    float: left;
+  }
+
+  div.done-button {
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    background-color:#EB6800;
+    font-size: 22px;
+    color: #FFFFFF;
+    position: sticky;
+    bottom: 0;
+
+  }
+
+  .icon{
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: #EB6800;
+  }
+  div.sticky-header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <div class="sticky-header">
+  <div class="header w3-bar" display= "inline-block">
+    <a href="ingredient2.html" class="w3-bar-item w3-button w3-xlarge w3-text-white " style="width:56px;padding:10px 0"><i class="fas fa-arrow-left"></i></a>
+    <div class="title w3-bar-item w3-text-white w3-cell-middle" style="width:304px;padding:13px 0;padding-right:50px;" display= "inline-block">Shopping list</div>
+  </div>
+</div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/spam.jpeg" class="w3-bar-item" style="height:85px;width:100px">
+    <div class="item-content">
+      <div class="item-header w3-large">Spam Classic</div>
+      <div class="item-price">$5.84</div>
+      <div class="item-location w3-right-align"> Aisle #4 | Shelf B32</div>
+    </div>
+    <div onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/eggs.jpg" class="w3-bar-item " style="height:85px;width:100px">
+    <div class="item-content">
+      <span class="item-header w3-large">Large eggs</span><br>
+      <span class="item-price">$8.53</span><br>
+      <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
+    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+  </div>
+
+
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/carrots.jpeg" class="w3-bar-item " style="height:85px;width:100px">
+    <div class="item-content">
+      <span class="item-header w3-large">Carrots</span><br>
+      <span class="item-price">$0.82</span><br>
+      <span class="item-location w3-right-align"> Aisle #1 | Shelf A3</span>
+    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/rice.jpeg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
+    <div class="item-content">
+      <span class="item-header w3-large">Rice</span><br>
+      <span class="item-price">$17.84</span><br>
+      <span class="item-location w3-right-align"> Aisle #2 | Shelf A13</span>
+    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+
+  </div>
+
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/Cinnamon.jpg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
+    <div class="item-content">
+      <span class="item-header w3-large">Cinnamon Powder</span><br>
+      <span class="item-price">$4.53</span><br>
+      <span class="item-location w3-right-align"> Aisle #3 | Shelf A43</span>
+    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+  </div>
+
+  <div class="item-container w3-bar w3-bar-item">
+    <img src="shopping-cart/corn.jpeg" class="w3-bar-item w3-circle" style="height:85px;width:100px">
+    <div class="item-content">
+      <span class="item-header w3-large">Frozen Corn</span><br>
+      <span class="item-price">$2.00$</span><br>
+      <span class="item-location w3-right-align"> Aisle #1 | Shelf D13</span>
+    </div>
+    <div  onclick="this.parentElement.style.display='none'" class="icon w3-xlarge"><i class="fas fa-cart-arrow-down"></i></div>
+  </div>
+
+
+
+
+
+  <a href="index.html"><div class="done-button w3-button w3-block">Scan another item</div></a>
+
+</body>
+
+
+</html>
